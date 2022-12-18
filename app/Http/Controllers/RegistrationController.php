@@ -32,7 +32,7 @@ class RegistrationController extends Controller
         $p->email = $request->email;
         $p->phone = $request->phone;
         $p->address = $request->address;
-        $p->password = Hash::make($request->password);
+        $p->password = $request->password;
         $p->balance = 0;
         $res = $p->save();
         if ($res) {
@@ -61,7 +61,7 @@ class RegistrationController extends Controller
         $o->email = $request->email;
         $o->phone = $request->phone;
         $o->address = $request->address;
-        $o->password = Hash::make($request->password);
+        $o->password = $request->password;
         $o->balance = 0;
         $res = $o->save();
         if ($res) {

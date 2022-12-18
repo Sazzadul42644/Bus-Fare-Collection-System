@@ -10,7 +10,7 @@
 <body>
     <h3>Delivery</h3>
     <p>{{$data['body']}}</p>
-    <a href="{{route('reset-password-form')}}">Reset Password</a>
+    <a href="http://localhost:3000/Reset-Password">Reset Password</a>
 
 </body>
 </html>

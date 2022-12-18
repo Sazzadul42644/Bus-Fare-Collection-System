@@ -32,7 +32,7 @@ class LoginController extends Controller
         $busOwner = BusOwner::where('email', $request->email)->first();
         $admin = Admin::where('email', $request->email)->first();
         if ($user) {
-            if (Hash::check($request->password, $user->password)) {
+            if ($request->password=$user->password) {
                 $request->session()->put('loginId', $user->id);
                 return redirect('dashboard');
             } else {

@@ -34,6 +34,7 @@ Route::post('/Add-Bus-api', [AddBusController::class, 'BusRegisterSubmitApi']);
 Route::post('/card-punch', [CardPunchController::class, 'store']);
 
 Route::get('/stations', [StationController::class, 'index']);
+Route::post('/add-stations', [StationController::class, 'addStation']);
 
 Route::post('/loginApi', [LoginAPIController::class, 'login']);
 Route::post('/passenger-register', [RegistrationApiController::class, 'passengerRegister']);
@@ -43,7 +44,7 @@ Route::post('/logout', [LoginAPIController::class, 'logout']);
 Route::post('/add-bus', [BusOwnerApiController::class, 'AddBusSubmitApi']);
 Route::get('/view-bus-api', [BusOwnerApiController::class, 'viewBusApi']);
 Route::get('/route-list', [BusOwnerApiController::class, 'viewRouteApi']);
-Route::get('/delete', [BusOwnerApiController::class, 'delete']);
+Route::delete('/delete-bus/{id}', [BusOwnerApiController::class, 'delete']);
 
 Route::post('/add-route', [AdminApiController::class, 'AddRouteSubmitApi']);
 Route::get('/passenger-list', [AdminApiController::class, 'PassengerList']);

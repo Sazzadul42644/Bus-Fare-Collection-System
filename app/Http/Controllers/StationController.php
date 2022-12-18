@@ -18,69 +18,19 @@ class StationController extends Controller
         return Station::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function addStation()
     {
-        //
+        $s = new Station();
+        $s->station_name = $request->station_name;
+        $s->latitude = $request->latitude;
+        $s->longitude = $request->longitude;
+        $res = $s->save();
+        if ($res) {
+            return "registration success";;
+        } else {
+            return "registration failed";
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreStationRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreStationRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Station  $station
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Station $station)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Station  $station
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Station $station)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateStationRequest  $request
-     * @param  \App\Models\Station  $station
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateStationRequest $request, Station $station)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Station  $station
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Station $station)
-    {
-        //
-    }
+   
 }
